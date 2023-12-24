@@ -1,7 +1,8 @@
 import React from "react";
+import { Heading } from "./Text";
 
 const Dashboard = () => {
-  return <div>Dashboard</div>;
+  return <Heading variant="h4">Dashboard</Heading>;
 };
 
 export default Dashboard;
