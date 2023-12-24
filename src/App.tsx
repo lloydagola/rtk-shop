@@ -10,7 +10,7 @@ import "./App.css";
 import Product from "./components/Product";
 import Dashboard from "./components/Dashboard";
 import Cart from "./components/Cart";
-import RootLayout from "./Layouts/RootLayout";
+import RootLayout from "./layouts/RootLayout";
 import NotFound from "./components/NotFound";
 
 function App() {
