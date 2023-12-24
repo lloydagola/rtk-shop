@@ -1,6 +1,6 @@
 import React from "react";
 import { Heading } from "./Text";
-import Product from "./Product";
+import Products from "./Products";
 
 const Dashboard = () => {
   return (
@@ -9,7 +9,7 @@ const Dashboard = () => {
         <Heading variant="h4">Dashboard</Heading>;
       </section>
       <section>
-        <Product />
+        <Products />
       </section>
     </>
   );

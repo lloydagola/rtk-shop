@@ -16,7 +16,7 @@ const fetchProducts = async () => {
   return products;
 };
 
-const Product = () => {
+const Products = () => {
   const [products, setProducts] = useState<IProduct[]>([]);
   useEffect(() => {
     (async function () {
@@ -55,4 +55,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default Products;
