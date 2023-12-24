@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { IProduct } from "../../common/types/types";
 
-
 const initialState: IProduct[] = []
 
 const cartSlice = createSlice({
@@ -10,9 +9,12 @@ const cartSlice = createSlice({
     reducers:{
         add(state, action){
             state.push(action.payload)
+        },
+        remove(state, action){
+            return state.filter(product => product.id !== action.payload)
         }
     }
 })
 
-export const {add} = cartSlice.actions;
+export const {add, remove} = cartSlice.actions;
 export default cartSlice.reducer;
