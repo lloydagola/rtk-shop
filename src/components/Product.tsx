@@ -1,11 +1,14 @@
-import { Typography, private_createTypography } from "@mui/material";
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
 import React, { useEffect, useState } from "react";
 
+import products from "../mocks/data/products";
+
 const fetchProducts = async () => {
-  const result = await fetch("https://fakestoreapi.com/products");
-  const products = await result.json();
+  //const result = await fetch("https://fakestoreapi.com/productss");
+  //const products = await result.json();
 
   return products;
 };
@@ -29,11 +32,18 @@ const Product = () => {
     })();
   }, []);
 
+  console.log({ products });
+
   const cards = products.map((product: IProduct) => (
     <Grid item xs={12} lg={3}>
-      <Card>
+      <Card sx={{ margin: "16px", padding: "16px" }}>
         <img src={product.image} alt="product" width="150px" />
-        <Typography>card body</Typography>
+        <Typography variant="h5">{product.title}</Typography>
+        <Typography>KES: {product.price}</Typography>
+        <Typography>{product.description}</Typography>
+        <Button variant="contained" sx={{ margin: "8px" }}>
+          Do Something
+        </Button>
       </Card>
     </Grid>
   ));
