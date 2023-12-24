@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 import React, { useEffect, useState } from "react";
 
 import products from "../mocks/data/products";
+import { IProduct } from "../common/types/types";
 
 const fetchProducts = async () => {
   //const result = await fetch("https://fakestoreapi.com/productss");
@@ -12,16 +13,6 @@ const fetchProducts = async () => {
 
   return products;
 };
-
-interface IProduct {
-  category: string;
-  description: string;
-  image: string;
-  id: number;
-  price: number;
-  rating: any;
-  title: string;
-}
 
 const Product = () => {
   const [products, setProducts] = useState<IProduct[]>([]);
