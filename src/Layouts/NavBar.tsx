@@ -36,7 +36,7 @@ const NavBar = () => {
           </Grid>
           <Grid item lg={1}>
             <li>
-              <a href="/dashboard">Dashboard</a>
+              <a href="/">Dashboard</a>
             </li>
           </Grid>
           <Grid item flex="1" />

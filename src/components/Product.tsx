@@ -42,7 +42,7 @@ const Product = () => {
         <Typography>KES: {product.price}</Typography>
         <Typography>{product.description}</Typography>
         <Button variant="contained" sx={{ margin: "8px" }}>
-          Do Something
+          Add to Cart
         </Button>
       </Card>
     </Grid>
