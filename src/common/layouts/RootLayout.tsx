@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import { Provider } from "react-redux";
 
 import NavBar from "./NavBar";
-import store from "../state/store/store";
+import store from "../../state/store/store";
 
 const RootLayout = () => {
   return (

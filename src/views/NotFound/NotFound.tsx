@@ -1,6 +1,6 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import { Heading } from "../../components/Text";
+import { Heading } from "../../common/components/Text";
 
 export const NotFound = () => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading } from "../../components/Text";
+import { Heading } from "../../common/components/Text";
 
 const Cart = () => {
   return <Heading variant="h4">Cart</Heading>;

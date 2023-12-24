@@ -9,7 +9,7 @@ import {
 import "./App.css";
 import Dashboard from "./views/Dashboard/Dashboard";
 import Cart from "./views/Cart/Cart";
-import RootLayout from "./layouts/RootLayout";
+import RootLayout from "./common/layouts/RootLayout";
 import NotFound from "./views/NotFound/NotFound";
 
 function App() {

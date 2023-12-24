@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import styled from "@emotion/styled";
 import Grid from "@mui/material/Grid";
-import { RootState } from "../state/store/store";
+import { RootState } from "../../state/store/store";
 
 const StyledNav = styled("nav")({});
 const StyledUl = styled("ul")({

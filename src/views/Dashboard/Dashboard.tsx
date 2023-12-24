@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading } from "../../components/Text";
+import { Heading } from "../../common/components/Text";
 import Products from "../Products/Products";
 
 const Dashboard = () => {
