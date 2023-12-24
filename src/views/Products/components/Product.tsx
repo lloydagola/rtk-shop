@@ -1,16 +1,17 @@
+import React from "react";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
-import React from "react";
-import { IProduct } from "../../../common/types/types";
 import Grid from "@mui/material/Grid";
+import { IProduct } from "../../../common/types/types";
 
 interface IProductProps {
-  addToCart: (product: IProduct) => void;
   product: IProduct;
+  addToCart?: (product: IProduct) => void;
+  removeFromCart?: (productId: number) => void;
 }
 
-const Product = ({ product, addToCart }: IProductProps) => {
+const Product = ({ product, addToCart, removeFromCart }: IProductProps) => {
   return (
     <Grid item xs={12} lg={3}>
       <Card sx={{ padding: "16px" }}>
@@ -18,13 +19,23 @@ const Product = ({ product, addToCart }: IProductProps) => {
         <Typography variant="h5">{product.title}</Typography>
         <Typography>KES: {product.price}</Typography>
         <Typography>{product.description}</Typography>
-        <Button
-          variant="contained"
-          sx={{ margin: "8px" }}
-          onClick={() => addToCart(product)}
-        >
-          Add to Cart
-        </Button>
+        {addToCart ? (
+          <Button
+            variant="contained"
+            sx={{ margin: "8px" }}
+            onClick={() => addToCart(product)}
+          >
+            Add to Cart
+          </Button>
+        ) : removeFromCart ? (
+          <Button
+            variant="contained"
+            sx={{ margin: "8px" }}
+            onClick={() => removeFromCart(product.id)}
+          >
+            Remove from Cart
+          </Button>
+        ) : null}
       </Card>
     </Grid>
   );
