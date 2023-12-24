@@ -1,6 +1,6 @@
 import React from "react";
-import { Heading } from "./Text";
-import Products from "./Products/Products";
+import { Heading } from "../../components/Text";
+import Products from "../Products/Products";
 
 const Dashboard = () => {
   return (

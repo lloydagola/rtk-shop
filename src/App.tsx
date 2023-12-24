@@ -7,10 +7,10 @@ import {
 } from "react-router-dom";
 
 import "./App.css";
-import Dashboard from "./components/Dashboard";
-import Cart from "./components/Cart";
+import Dashboard from "./views/Dashboard/Dashboard";
+import Cart from "./views/Cart/Cart";
 import RootLayout from "./layouts/RootLayout";
-import NotFound from "./components/NotFound";
+import NotFound from "./views/NotFound/NotFound";
 
 function App() {
   const router = createBrowserRouter(
