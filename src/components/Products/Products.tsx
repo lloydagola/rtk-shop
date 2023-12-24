@@ -1,7 +1,4 @@
-import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import React, { useCallback, useEffect, useState } from "react";
 
 import products from "../../mocks/data/products";
