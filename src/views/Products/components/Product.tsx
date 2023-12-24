@@ -13,12 +13,19 @@ interface IProductProps {
 }
 
 const Product = ({ product, addToCart, removeFromCart }: IProductProps) => (
-  <Grid item xs={12} lg={3}>
-    <Card sx={{ padding: "16px" }}>
-      <img src={product.image} alt="product" width="150px" />
+  <Grid item xs={12} lg={3} display="flex">
+    <Card
+      sx={{
+        padding: "16px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      <img src={product.image} alt="product" width="150px" min-height="150px" />
       <Typography variant="h5">{product.title}</Typography>
       <Typography>KES: {product.price}</Typography>
-      <Typography>{product.description}</Typography>
+      <Typography flexGrow="1">{product.description}</Typography>
       {addToCart ? (
         <Button
           variant="contained"
