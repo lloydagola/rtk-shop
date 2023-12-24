@@ -1,7 +1,7 @@
 import Grid from "@mui/material/Grid";
 import React, { useCallback, useEffect, useState } from "react";
 
-import products from "../../mocks/data/products";
+import products from "../../common/mocks/data/products";
 import { IProduct } from "../../common/types/types";
 import { useDispatch } from "react-redux";
 import { add } from "../../state/slices/cartSlice";
