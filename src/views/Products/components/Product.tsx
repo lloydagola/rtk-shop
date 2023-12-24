@@ -29,6 +29,7 @@ const Product = ({ product, addToCart, removeFromCart }: IProductProps) => (
       {addToCart ? (
         <Button
           variant="contained"
+          color="success"
           sx={{ margin: "8px" }}
           onClick={() => addToCart(product)}
         >
@@ -37,6 +38,7 @@ const Product = ({ product, addToCart, removeFromCart }: IProductProps) => (
       ) : removeFromCart ? (
         <Button
           variant="contained"
+          color="error"
           sx={{ margin: "8px" }}
           onClick={() => removeFromCart(product.id)}
         >
