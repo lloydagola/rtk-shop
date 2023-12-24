@@ -22,7 +22,7 @@ const StyledUl = styled("ul")({
 });
 
 const NavBar = () => {
-  const cartList = useSelector((state: RootState) => state.cart);
+  const cartLength = useSelector((state: RootState) => state.cart).length;
   return (
     <StyledNav>
       <StyledUl>
@@ -45,7 +45,7 @@ const NavBar = () => {
           <Grid item flex="1" />
           <Grid item lg={1}>
             <li>
-              <Link to="/cart">My Bag {cartList.length}</Link>
+              <Link to="/cart">My Bag {cartLength}</Link>
             </li>
           </Grid>
         </Grid>
