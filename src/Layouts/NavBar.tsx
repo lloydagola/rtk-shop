@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import styled from "@emotion/styled";
 import Grid from "@mui/material/Grid";
+import { RootState } from "../state/store/store";
 
 const StyledNav = styled("nav")({});
 const StyledUl = styled("ul")({
@@ -20,6 +22,7 @@ const StyledUl = styled("ul")({
 });
 
 const NavBar = () => {
+  const cartList = useSelector((state: RootState) => state.cart);
   return (
     <StyledNav>
       <StyledUl>
@@ -36,13 +39,13 @@ const NavBar = () => {
           </Grid>
           <Grid item lg={1}>
             <li>
-              <a href="/">Dashboard</a>
+              <Link to="/">Dashboard</Link>
             </li>
           </Grid>
           <Grid item flex="1" />
           <Grid item lg={1}>
             <li>
-              <a href="/cart">My Bag {0}</a>
+              <Link to="/cart">My Bag {cartList.length}</Link>
             </li>
           </Grid>
         </Grid>
