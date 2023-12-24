@@ -1,11 +1,11 @@
-import Grid from "@mui/material/Grid";
 import React, { useCallback, useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import Grid from "@mui/material/Grid";
 
+import Product from "./components/Product";
 import products from "../../common/mocks/data/products";
 import { IProduct } from "../../common/types/types";
-import { useDispatch } from "react-redux";
 import { add } from "../../state/slices/cartSlice";
-import Product from "./components/Product";
 
 const fetchProducts = async () => {
   //const result = await fetch("https://fakestoreapi.com/productss");
