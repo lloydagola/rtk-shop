@@ -36,7 +36,7 @@ const Product = () => {
 
   const cards = products.map((product: IProduct) => (
     <Grid item xs={12} lg={3}>
-      <Card sx={{ margin: "16px", padding: "16px" }}>
+      <Card sx={{ padding: "16px" }}>
         <img src={product.image} alt="product" width="150px" />
         <Typography variant="h5">{product.title}</Typography>
         <Typography>KES: {product.price}</Typography>
@@ -48,7 +48,11 @@ const Product = () => {
     </Grid>
   ));
 
-  return <Grid container>{cards};</Grid>;
+  return (
+    <Grid container spacing={2}>
+      {cards}
+    </Grid>
+  );
 };
 
 export default Product;
