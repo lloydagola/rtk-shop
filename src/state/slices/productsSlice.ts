@@ -1,14 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { AppDispatch } from "../store/store";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
- 
-import products from "../../common/mocks/data/products";
+import StatusCodes from "../../common/utils/StatusCodes";
 
 const initialState = {
     data:[],
+    status:'idle'
 }
-
-
 
 interface IAction{
     type:string,
@@ -20,30 +17,31 @@ const productsSlice = createSlice({
     initialState,
     reducers:{
         fetchProducts(state:any, action:IAction){
-            console.log('fetchProducts reducer...')
             state.data = action.payload;
         }
        
+    },
+    extraReducers: builder => {
+        builder
+        .addCase(getProducts.pending, (state, action) => {
+            state.status = StatusCodes.LOADING
+        })
+        .addCase(getProducts.fulfilled, (state, action) => {
+            state.status = StatusCodes.IDLE
+            state.data = action.payload
+        })
+        .addCase(getProducts.rejected, (state, action) => {
+            state.status =  StatusCodes.ERROR
+        })
     }
 });
 
 export const {fetchProducts} = productsSlice.actions;
 export default productsSlice.reducer;
 
-export function getProducts(){
-    return async function getProductsThunk(dispatch: AppDispatch, getState: any){
-        console.log('getting productsThunk...')
-        
-        try {
-            const response = await fetch("https://fakestoreapi.com/productss");
-            const products = await response.json();
-    
-            dispatch(fetchProducts(products))
-            
-        } catch (error) {
-            console.log('an error occurred while attempting to fetch products...');
-            dispatch(fetchProducts(products))
-        }
+export const getProducts = createAsyncThunk('products/get', async () => {
+    const response = await fetch("https://fakestoreapi.com/products");
+    const products = await response.json();
 
-    }
-};
+    return products
+})
