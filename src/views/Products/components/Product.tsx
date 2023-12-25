@@ -3,9 +3,9 @@ import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
-import { IProduct } from "../../../common/types/types";
 import Box from "@mui/material/Box";
 
+import { IProduct } from "../../../common/types/types";
 interface IProductProps {
   product: IProduct;
   addToCart?: (product: IProduct) => void;
@@ -22,7 +22,14 @@ const Product = ({ product, addToCart, removeFromCart }: IProductProps) => (
         alignItems: "center",
       }}
     >
-      <img src={product.image} alt="product" width="150px" min-height="150px" />
+      <Box>
+        <img
+          src={product.image}
+          alt="product"
+          width="150px"
+          min-height="150px"
+        />
+      </Box>
       <Typography variant="h5">{product.title}</Typography>
       <Typography>KES: {product.price}</Typography>
       <Typography flexGrow="1">{product.description}</Typography>

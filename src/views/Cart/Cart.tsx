@@ -27,9 +27,9 @@ const Cart = () => {
   const dispatch = useDispatch();
 
   const removeFromCart = (id: number) => {
-    console.log("removing...");
     dispatch(remove(id));
   };
+
   return (
     <>
       <section>
