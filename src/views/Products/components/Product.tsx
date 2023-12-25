@@ -26,13 +26,13 @@ const Product = ({ product, addToCart, removeFromCart }: IProductProps) => (
         <img
           src={product.image}
           alt="product"
-          width="150px"
+          width="100%"
           min-height="150px"
         />
       </Box>
       <Typography variant="h5">{product.title}</Typography>
       <Typography>KES: {product.price}</Typography>
-      <Typography flexGrow="1">{product.description}</Typography>
+      {/* <Typography flexGrow="1">{product.description}</Typography> */}
       {addToCart ? (
         <Button
           variant="contained"
